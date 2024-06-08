@@ -27,7 +27,7 @@ print(f"Load pre-trained checkpoint from: {ckpt_path}")
 checkpoint = torch.load(ckpt_path, map_location='cpu')
 checkpoint_model = checkpoint['model']
 msg = model.load_state_dict(checkpoint_model, strict=False)
-print(msg)  # print which weights are not loaded
+#print(msg)  # print which weights are not loaded
 model.to(device)
 
 # simple test for evaluation
