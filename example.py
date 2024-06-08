@@ -9,8 +9,8 @@ import models_vit
 # model parameters
 model_name = 'vit_base_patch16'
 ckpt_path = './models/mae_face_pretrain_vit_base.pth'
-global_pool = True # recommend: True for most cases, False if you want to evaluate the features from the pre-trained model without fine-tuning
-num_heads = 12 # specify the number of classification heads for the downstream task
+global_pool = True  # recommend: True for most cases, False if you want to evaluate the features from the pre-trained model without fine-tuning
+num_heads = 12  # specify the number of classification heads for the downstream task
 device = 'cuda'
 batch_size = 64
 
@@ -27,7 +27,7 @@ print(f"Load pre-trained checkpoint from: {ckpt_path}")
 checkpoint = torch.load(ckpt_path, map_location='cpu')
 checkpoint_model = checkpoint['model']
 msg = model.load_state_dict(checkpoint_model, strict=False)
-print(msg) # print which weights are not loaded
+print(msg)  # print which weights are not loaded
 model.to(device)
 
 # simple test for evaluation
